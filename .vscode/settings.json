@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+      "**/*.g.dart": true,
+      "**/*.freezed.dart": true,
+    },
+    "files.watcherExclude": {
+      "**/build/**": true
+    },
+    "python.venvFolders": [
+      "calGas"
+  ],
+  "dart.flutterSdkPaths": [
+    ".fvm/flutter_sdk"
+  ],
+  "dart.flutterSdkPath": "/Users/daichi/WORK/asigar/store_web/.fvm/flutter_sdk",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
+  }
+  
