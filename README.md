@@ -11,7 +11,7 @@ A new Flutter project.
 ### Build web
 
 ```
-flutter build web --release # Creeted build/web
+flutter build web --release # Created build/web
 ```
 
 ### Run docker
