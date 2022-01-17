@@ -8,6 +8,8 @@ analyzer:
     missing_return: warning
     implicit_dynamic_type: false
     implicit_dynamic_map_literal: false
+    implicit_dynamic_method: false
+    one_member_abstracts: false
   language:
     strict-inference: true
     strict-raw-types: true

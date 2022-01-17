@@ -6,15 +6,13 @@
     "files.watcherExclude": {
       "**/build/**": true
     },
-    "python.venvFolders": [
-      "calGas"
-  ],
   "dart.flutterSdkPaths": [
     ".fvm/flutter_sdk"
   ],
   "dart.flutterSdkPath": "/Users/daichi/WORK/asigar/store_web/.fvm/flutter_sdk",
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
-  }
+  },
+  "go.useLanguageServer": false
   }
   

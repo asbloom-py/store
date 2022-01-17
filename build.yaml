@@ -1,0 +1,23 @@
+targets:
+  $default:
+    builders:
+      auto_route_generator|autoRouteGenerator:
+        enabled: true
+        generate_for:
+          include:
+            - lib/router/router.dart
+      freezed:
+        generate_for:
+          include:
+            - lib/resource/entity/**/*.dart
+            - lib/resource/entity/*.dart
+            - lib/resource/states/*.dart
+      json_serializable:
+        generate_for:
+          include:
+            - lib/resource/entity/**/*.dart
+            - lib/resource/entity/*.dart
+            - lib/resource/states/*.dart
+        options:
+          any_map: true
+          explicit_to_json: true

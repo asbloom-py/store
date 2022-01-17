@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:store_web/router/router.gr.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
-  runApp(MyApp());
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

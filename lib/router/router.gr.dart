@@ -14,7 +14,7 @@ import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:flutter/material.dart' as _i5;
 import 'package:store_web/screens/home/page.dart' as _i1;
 import 'package:store_web/screens/merchant/page_merchant.dart' as _i2;
-import 'package:store_web/screens/merchant/shop/page_shop.dart' as _i3;
+import 'package:store_web/screens/merchant/store/page_store.dart' as _i3;
 
 class AppRouter extends _i4.RootStackRouter {
   AppRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
@@ -24,7 +24,7 @@ class AppRouter extends _i4.RootStackRouter {
   final Map<String, _i4.PageFactory> pagesMap = {
     HomePageRoute.name: (routeData) {
       return _i4.AdaptivePage<dynamic>(
-          routeData: routeData, child: _i1.HomePage());
+          routeData: routeData, child: const _i1.HomePage());
     },
     MerchantPage.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
@@ -33,18 +33,20 @@ class AppRouter extends _i4.RootStackRouter {
               merchantId: pathParams.getString('merchant_id', '')));
       return _i4.AdaptivePage<dynamic>(
           routeData: routeData,
-          child: _i2.MerchantPage(merchantId: args.merchantId));
+          child: _i2.MerchantPage(key: args.key, merchantId: args.merchantId));
     },
     StorePage.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<StorePageArgs>(
           orElse: () => StorePageArgs(
-              shopId: pathParams.getString('shop_id', ''),
+              storeId: pathParams.getString('store_id', ''),
               merchantId: pathParams.getString('merchant_id', '')));
       return _i4.AdaptivePage<dynamic>(
           routeData: routeData,
-          child:
-              _i3.ShopPage(shopId: args.shopId, merchantId: args.merchantId));
+          child: _i3.StorePage(
+              key: args.key,
+              storeId: args.storeId,
+              merchantId: args.merchantId));
     }
   };
 
@@ -57,9 +59,9 @@ class AppRouter extends _i4.RootStackRouter {
               redirectTo: '',
               fullMatch: true)
         ]),
-        _i4.RouteConfig(MerchantPage.name, path: '/merchant/:merchant_id'),
+        _i4.RouteConfig(MerchantPage.name, path: '/merchant'),
         _i4.RouteConfig(StorePage.name,
-            path: '/merchant/:merchant_id/shop/:shop_id'),
+            path: '/merchant/:merchant_id/store/:store_id'),
         _i4.RouteConfig('*#redirect',
             path: '*', redirectTo: '/', fullMatch: true)
       ];
@@ -77,47 +79,52 @@ class HomePageRoute extends _i4.PageRouteInfo<void> {
 /// generated route for
 /// [_i2.MerchantPage]
 class MerchantPage extends _i4.PageRouteInfo<MerchantPageArgs> {
-  MerchantPage({String merchantId = ''})
+  MerchantPage({_i5.Key? key, String merchantId = ''})
       : super(MerchantPage.name,
-            path: '/merchant/:merchant_id',
-            args: MerchantPageArgs(merchantId: merchantId),
+            path: '/merchant',
+            args: MerchantPageArgs(key: key, merchantId: merchantId),
             rawPathParams: {'merchant_id': merchantId});
 
   static const String name = 'MerchantPage';
 }
 
 class MerchantPageArgs {
-  const MerchantPageArgs({this.merchantId = ''});
+  const MerchantPageArgs({this.key, this.merchantId = ''});
+
+  final _i5.Key? key;
 
   final String merchantId;
 
   @override
   String toString() {
-    return 'MerchantPageArgs{merchantId: $merchantId}';
+    return 'MerchantPageArgs{key: $key, merchantId: $merchantId}';
   }
 }
 
 /// generated route for
-/// [_i3.ShopPage]
+/// [_i3.StorePage]
 class StorePage extends _i4.PageRouteInfo<StorePageArgs> {
-  StorePage({String shopId = '', String merchantId = ''})
+  StorePage({_i5.Key? key, String storeId = '', String merchantId = ''})
       : super(StorePage.name,
-            path: '/merchant/:merchant_id/shop/:shop_id',
-            args: StorePageArgs(shopId: shopId, merchantId: merchantId),
-            rawPathParams: {'shop_id': shopId, 'merchant_id': merchantId});
+            path: '/merchant/:merchant_id/store/:store_id',
+            args: StorePageArgs(
+                key: key, storeId: storeId, merchantId: merchantId),
+            rawPathParams: {'store_id': storeId, 'merchant_id': merchantId});
 
   static const String name = 'StorePage';
 }
 
 class StorePageArgs {
-  const StorePageArgs({this.shopId = '', this.merchantId = ''});
+  const StorePageArgs({this.key, this.storeId = '', this.merchantId = ''});
 
-  final String shopId;
+  final _i5.Key? key;
+
+  final String storeId;
 
   final String merchantId;
 
   @override
   String toString() {
-    return 'StorePageArgs{shopId: $shopId, merchantId: $merchantId}';
+    return 'StorePageArgs{key: $key, storeId: $storeId, merchantId: $merchantId}';
   }
 }

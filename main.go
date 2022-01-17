@@ -13,5 +13,5 @@ func main() {
 
     log.Println("Listening...")
     // 3000ポートでサーバーを立ち上げる
-    http.ListenAndServe(":3000", nil)
+    http.ListenAndServe(":3333", nil)
 }

@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:store_web/screens/home/page.dart';
 import 'package:store_web/screens/merchant/page_merchant.dart';
-import 'package:store_web/screens/merchant/shop/page_shop.dart';
+import 'package:store_web/screens/merchant/store/page_store.dart';
 
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route,Screen',
@@ -16,13 +16,14 @@ import 'package:store_web/screens/merchant/shop/page_shop.dart';
     ),
     //authentication routes
     AutoRoute(
-      path: '/merchant/:merchant_id',
+      path: '/merchant',
+      // path: '/merchant/:merchant_id',
       page: MerchantPage,
       name: 'MerchantPage',
     ),
     AutoRoute(
-      path: '/merchant/:merchant_id/shop/:shop_id',
-      page: ShopPage,
+      path: '/merchant/:merchant_id/store/:store_id',
+      page: StorePage,
       name: 'StorePage',
     ),
 
