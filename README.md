@@ -24,7 +24,7 @@ docker-compose --build && docker-compose up -d
 ### Docker Container and Role
 - Proxy
   Nginx. Reverse proxy.
-  `URL` daichi-curry.asigar.com
+  `URL` test.local
 - Web
   Nginx. Flutter web.
   `URL` localhost:3333
@@ -33,4 +33,4 @@ docker-compose --build && docker-compose up -d
   `URL` localhost:3000
 
 ### URL scheme
-daichi-curry.asigar.com -> localhost:3333/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU -> localhost:3000/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU
+test.local -> localhost:3333/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU -> localhost:3000/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU
