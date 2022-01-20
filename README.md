@@ -33,4 +33,4 @@ docker-compose --build && docker-compose up -d
   `URL` localhost:3000
 
 ### URL scheme
-daichi-curry.asigar.com -> localhost:3333/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/shop/Tlii3joayARMatbIYzsU -> localhost:3000/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/shop/Tlii3joayARMatbIYzsU
+daichi-curry.asigar.com -> localhost:3333/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU -> localhost:3000/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU
