@@ -40,8 +40,8 @@ localhost -> localhost:3333/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joa
 2. When access http://localhost/store, it shows localhost:3333/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU/store without redirect.
 
 ### Current behavior
-Works good.
-proxy.nginx.conf
+👍 Works good.  
+`proxy.nginx.conf`
 ```
 proxy_pass                                http://store_web/; 
 ```
@@ -49,9 +49,9 @@ When access http://localhost, it shows localhost:3333.
 When access http://localhost/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU, it shows http://localhost:3333/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU.
 
 
-Works bad.  
-I changed proxy_pass http://store_web/ to http://store_web/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU.
-proxy.nginx.conf
+👎 Works bad.  
+I changed proxy_pass http://store_web/ to http://store_web/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU.  
+`proxy.nginx.conf`
 ```
 proxy_pass                                http://store_web/merchant/uNIBNya8QiyaeiBSAdh0FxcpNyd8/store/Tlii3joayARMatbIYzsU/; 
 ```
